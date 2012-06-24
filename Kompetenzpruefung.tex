@@ -1,0 +1,125 @@
+%% <Schule/Epochenheft.tex> Vorlageversion 1.1.1 <Robin Schneider>
+%%%Präambel
+%\RequirePackage{snapshot}		%% \jobname.dep
+%\listfiles	%% listfiles in die Logdatei
+\RequirePackage{RequirePackageRS}
+\documentclass[12pt,a4paper,ngerman,numbers=noenddot,toc=listof]{scrreprt}
+%\usepackage[nohyperlinks,nolist]{acronym}		% nolist,withpage,footnote %% Abkürzungsverzeichnis
+\usepackage{
+	physicsRS,
+	scrartclRS,
+	defaultRS,
+%	literatureRS,
+%	debugRS,
+	timeRS,
+	graphicRS,
+	eso-pic,	%% for the image on the titlepage
+	wrapfigWorkaroundRS,
+%	mathematicsRS,
+%	gamesRS,
+	layoutRS,
+%	footingRS,
+	extensionsRS,
+	docExtensionsRS,
+	schoolRS,
+%	chemistryRS,
+}
+%% Spetzifische angaben
+\input{files/header/metainfos}
+\usepackage[
+%	style=numeric,
+	style=authortitle-comp,
+	natbib=true,
+	backend=biber,
+]{biblatex}
+\DeclareFieldFormat{urldate}{\mkbibparens{abgerufen am\space#1}}
+\defbibheading{source}{\section{Quellenverzeichnis}}
+\bibliography{
+	files/header/Robin,
+	files/header/Joshuah,
+}
+\usepackage{
+	schoolPDFinfoRS,
+	tableRS,
+}
+\SetDraft{on}
+\input{files/header/hacks}
+%%%Body
+\begin{document}
+\pdfbookmark[1]{\Titlepagename}{titlepage}\pagenumbering{Roman}\thispagestyle{empty}
+\input{files/titlepage/titlepage}
+\newpage\printEpigraphPage
+\pdfbookmark[1]{\contentsname}{tableofcontents}
+\tableofcontents	%% Inhaltsverzeichnis
+\listoffigures		%% Abbildungsverzeichnis
+%\listoftables		%% Tabellenverzeichnis
+%\lstlistoflistings	%% Quellcodeverzeichnis
+%\input{/home/rsadmin/Dokumente/LaTeX/Abkuerzungen/Chemie}
+
+\setcounter{headpages}{\value{page}}\newpage\pagenumbering{arabic}
+%%%%%%%%%%%
+%\input{files/chapters/preface}
+
+%\include{files/chapters/Hannah/main}
+
+\input{files/chapters/Robin/main}
+
+\input{files/chapters/Joshuah/main}
+
+
+\setcounter{sectionsV}{\value{section}}		%% Speichert die sectionnummer vor \appendix zwischen
+\appendix	%% Sorgt für Buchstaben im Inhaltsverzeichnis
+
+%\nocite{*}
+
+\vfill
+\section*{Urheberrechte und Lizenzhinweise}
+Das Bild \enquote{\href{\URLTitlepageBG}{Der vitruvianische Mensch}},
+das auf der \hyperref[titlepage]{Titelseite} abgebildet ist, steht unter
+\href{http://creativecommons.org/licenses/by-sa/3.0/deed.de}{Creative Commons BY-SA 3.0}
+und stammt von Look Bellow.
+\printURLlong
+\printlicense
+\printendsignature
+%\ifDraft{
+	\newpage
+	\include{files/chapters/Planung-Recherche}
+  \Statistiken
+  Status:~\progressbar{.17} (eigenes Ermessen) \\
+  \href{http://robin.de.marissa.hostorama.ch/tmp/Realschulabschluss-Countdown.html}%
+	{Countdown zur Kompetenzprüfung und den Realschulprüfungen (Webseite)}
+  \newpage
+  \begin{sourcefiletable}{1}
+	\sourcefile{Hauptdatei}{\jobname.tex}
+    \Isourcefile{\LaTeX-Hacks}{files/header/hacks.tex}
+	\Isourcefile{Metainformationen}{files/header/metainfos.tex}
+	\Isourcefile{\hyperref[titlepage]{\Titlepagename}}{files/titlepage/titlepage.tex}
+	\sourcefile{\nameref{sec:preface}}{files/chapters/preface.tex}
+	\sourcefile{Teil Hannah}{files/chapters/Hannah/main.tex}
+	\sourcefile{\hyperref[sec:Robin_Schneider]{Teil Robin}}{files/chapters/Robin/main.tex}
+	\sourcefile{Robin: \nameref{sec:Robin:historical_overview}}{files/chapters/Robin/history.tex}
+	\sourcefile{Robin: \nameref{sec:Robin:topical}}{files/chapters/Robin/topical.tex}
+	\sourcefile{Robin: \nameref{sec:Robin:experiments}}{files/chapters/Robin/experiments.tex}
+	\sourcefile{Robin: \nameref{sec:Robin:future}}{files/chapters/Robin/future.tex}
+	\Isourcefile{Manuskript Robin}{files/chapters/tmp/Manuskript_Robin_Kompetenzpruefung.odt}
+	\Isourcefile{Literaturdatenbank Robin}{files/header/Robin.bib}
+	\sourcefile{Teil Joshuah}{files/chapters/Joshuah/main.tex}
+	\Isourcefile{Literaturdatenbank Joshuah}{files/header/Joshuah.bib}
+	\Isourcefile{\nameref{sec:Planung-Recherche}}{files/chapters/Planung-Recherche.tex}
+  \end{sourcefiletable}
+%}{}
+%\ifDraft{
+  \begin{landscape}
+	\pagestyle{empty}
+	\renewcommand{\resetplusplus}{\setcounter{plusplus}{36}}
+	\printVersionNotes\renewcommand{\resetplusplus}{\setcounter{plusplus}{0}}
+	\input{files/git/old/versions-log}
+	\printgitstatlandscape{1}
+  \end{landscape}
+	\printgitstat{1}
+%	\subsubsection*{Dateien?}
+%	\pdfbookmark[3]{Dateien?}{files_by_date}
+%	\includegraphics[width=14cm]{files/git/stats/files_by_date-crop}
+	\listoffixmes
+%}{}
+\end{document}

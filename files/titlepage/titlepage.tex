@@ -1,0 +1,32 @@
+%% Vorlage für die Titelseite eines Epochenheftes
+\newcommand{\URLTitlepageBG}%
+{http://commons.wikimedia.org/w/index.php?title=File:Vitruvian-Icon.png&oldid=53430871}
+\newcommand{\BackgroundPic}{
+\put(0,0){
+	\parbox[b][\paperheight]{\paperwidth}{%
+		\vfill
+		\centering
+		\vspace{7cm}
+		\href{\URLTitlepageBG}{
+		\includegraphics[width=0.6\paperwidth,
+			keepaspectratio]{files/titlepage/Vitruvian-Icon}}%
+		\vfill
+	}
+}}
+\AddToShipoutPicture{\BackgroundPic}
+\begin{titlepage}
+	\centering\label{titlepage}
+	\vspace*{5ex}
+	\huge \begin{tikzpicture}\spiegelschrift{\TITEL}{-0.15}\end{tikzpicture} \\[2cm]
+	\LARGE\textsc{\SUBJECT} \\[0.3cm]
+	\large Beteiligte Fächer: \SchoolSubjects \\[0.5cm]
+	\normalsize
+	\ABGABEDATUM \\[5cm]
+	\Large\hspace{-8cm}
+	\rotatebox{-90}{\printClass} \\
+	\vfill
+	\large
+	\AUTHOR \\[0.1em]
+	Betreut von \Betreuer
+\end{titlepage}
+\ClearShipoutPicture

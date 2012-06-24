@@ -1,0 +1,244 @@
+\section{Eigener Versuche -- ein sechster Sinn}
+\label{sec:Robin:experiments}
+In diesem Kapitel beschreibe ich eigene Versuche, die ich zur Erforschung der Erweiterbarkeit
+des Menschen und der Anpassungsfähigkeit des Gehirns durchgeführt habe.
+
+
+\newcommand{\Linkfeelspace}%
+{\enquote{\href{http://feelspace.cogsci.uni-osnabrueck.de/}{Feel Space}}}
+\subsection{Haptischer Kompass-Gürtel}
+Die Universität Osnabrück entwickelte unter dem Projektname \Linkfeelspace
+einen Gürtel, der über Vibration dem Träger die Himmelsrichtung mitteilt.
+Dazu werden zwölf beziehungsweise 30 Vibrationsmotoren mit einem Gürtel um den Bauch angebracht.
+Der Träger weiß dadurch, wo Norden ist,
+ohne auf einen Kompass schauen zu müssen. Diese Erweiterung der Positionsbestimmung des Menschen
+wird mit der Zeit unterbewusst vom Gehirn zur Navigation mit einbezogen. So berichtet Udo Wächter
+nach dem Tragen des Gürtels über sechs Wochen, dass er sich besser in Osnabrück orientieren konnte.
+Wächters Gehirn hat also eine neue Verbindung zwischen Reizung der
+Bauchnerven\footnote{beziehungsweise Rückennerven} und der
+Himmelsrichtung hergestellt.\footcite{noz:compass_belt}
+Somit stand Wächter, nach einer Lernphase an die nun fühlbare Himmelsrichtung, ein neuer
+Sinn für die Zeit des Experiments zur Verfügung.
+
+\subsubsection{Nachbau eines Kompass-Gürtels}
+Da ich mir die Wirksamkeit dieses \enquote{sechsten Sinn} sehr gut vorstellen konnte, wollte
+ich diesen auch selbst testen. Deshalb entschloss ich mich, eine einfache Variante dieses Gürtels
+mit nur zwei Vibrationsmotoren nachzubauen. Da zwei Motoren allerdings fast schon das Minimum
+darstellen und
+damit noch keine wirkliche Orientierung möglich war, rüstete ich später noch auf vier Vibrationsmotoren
+auf.
+Ein weiterer Grund für die Entscheidung zum Nachbau war,
+dass ich die meisten Komponenten und auch das nötige Wissen bereits besaß. Ein solcher Nachbau wurde
+schon von ein paar technikinteressierten Menschen umgesetzt, allerdings fand ich keine Anleitung.
+Deshalb überlegte ich mir selbst eine Schaltung.
+
+\begin{wrapfigure}{r}{0pt}
+	\includegraphics[width=5cm]{files/images/Robin/compass_belt/IMG_7994-rm-bg\imageresize}
+	\captionof{figure}{Komponenten meines Kompass-Gürtels}
+	\label{fig:Technik_compass_belt}
+\end{wrapfigure}
+
+Begonnen habe ich mit einem
+\href{http://www.mikrokopter.de/ucwiki/MK3Mag}{elektronischen Kompass}%
+\footnote{Nummer 1 auf Abb.~\vref{fig:Technik_compass_belt}}
+vom \href{http://www.mikrokopter.de}{MikroKopter Projekt}.
+Dieser gibt unter anderem eine Gradangabe aus. Daraus geht die Blickrichtung relativ zum Nordpol
+hervor. Ich entschied mich für einen PWM-Ausgang am Kompassmodul, um die Gradangabe in einem
+externen Mikrokontroller\footnote{\href{http://www.atmel.com/Images/doc8161.pdf}{ATmega328}, das
+rechteckige schwarze Bauteil bei Nummer 2 auf Abb.~\vref{fig:Technik_compass_belt}}
+weiter zu verarbeiten. Den Mikrokontroller lötete ich auf eine
+Lochstreifenplatine. Eine direkte Verarbeitung der Gradangabe und die Ansteuerung der Motoren mit
+dem Mikrokontroller des Kompassmoduls schloss ich aus, um mehr Steuerausgänge zur Verfügung zu
+haben\footnote{und um nicht auf der Platine löten zu müssen. Zum Beispiel das direkte abgreifen
+von Signale am SMD-Mikrokontroller.}.
+Den externen Mikrokontroller programmierte ich so, dass dieser einen von vier Steuerausgängen
+für 150 Millisekunden anschaltet, wenn Norden entweder vorne, rechts, hinten oder links ist.
+Um dieses schwache\footnote{Die maximale Belastbarkeit ist mit \SI{40}{\milli\ampere} pro Pin
+angegeben.}
+Steuersignal zum Schalten eines Vibrationsmotors verwenden zu können, verstärkte ich es über eine
+Transistorschaltung. Diese baute ich auf Lochraster (\hyperref[fig:Technik_compass_belt]{Nr. 3})
+auf. Die Vibrationsmotoren (\hyperref[fig:Technik_compass_belt]{Nr. 4}) baute ich aus alten
+Handys
+aus und verkabelte sie mit der Transistorschaltung. Ich opferte anfangs nur zwei Handys, da ich
+bei einem Erfolg weitere Vibrationsmotoren sehr günstig
+\href{http://www.pollin.de/shop/dt/NDA2OTg2OTk-/Motoren/%
+Gleichstrommotoren/Vibrationsmotor_LA4_432A.html}{nachbestellen}
+könnte.
+Um die Vibrationsmotoren ohne Handy zu betreiben, brauchte ich noch ein Gehäuse, da sich sonst der Motor
+nicht drehen kann. Bei den zwei ersten Handys schnitt ich einfach den Teil\footnote{Der Vibrationsmotor
+sitzt meist ganz unten im Handy in der Nähe des Mikrofons, außer bei einem Motorola V300 (Klapphandy). Bei
+diesem war er im unteren Teil des Display Gehäuses verbaut.}, wo der Motor verbaut war, aus dem Gehäuse
+raus und hatte so schon passende Halterungen, die genug Platz für die Unwucht boten. Die Vibrationsmotoren
+klebte ich mit Heißkleber in die Halterungen. Als ich dann noch zwei alte Handys %von einem guten Freund
+bekam, entschied ich mich dafür doch keine Vibrationsmotoren zu bestellen, sondern noch zwei auseinander zu
+nehmen. Außerdem beschloss ich nicht mehr das Handygehäuse zu zerschneiden, um eine passende Hülle für die
+Motoren zu bekommen, sondern selbst zwei aus Holz zu fertigen. Ich bohrte Löcher mit dem Durchmesser der
+Motoren in kleine Hartholzstücke und brachte diese dann in die Form von Quadern. Anschließend klebte ich
+die Vibrationsmotoren im Holz fest. Dabei war darauf zu achten, dass sich die Unwucht weiterhin drehen
+konnte.
+
+\begin{wrapfigure}{r}{0pt}
+	\includegraphics[width=5.1cm]{files/images/Robin/compass_belt/IMG_8070-rm-bg\imageresize}
+	\captionof{figure}{Zwei Vibrationsmotoren mit Gehäuse aus Holz}
+	\label{fig:motors_compass_belt}
+\end{wrapfigure}
+
+Somit standen mir vier Vibrationsmotoren zur Verfügung.
+Die komplette Technik brachte ich zusammen mit einem Akkupack
+an einem Gürtel an. Da das Kompassmodul keine Beschleunigungssensoren zur Verfügung hat und somit
+nicht weiß, wo \enquote{unten} ist, musste ich bei der Befestigung am Gürtel, auf eine waggerechte
+Lage achten. Um ständiges Vibrieren zu vermeiden, änderte ich das Programm, sodass
+nur eine Vibration an den Träger weiter gegeben wird, wenn sich dieser zur nächsten Position gedreht
+hat.
+
+Das erste Problem, was mir auffiel war, dass der Bauch sehr viel empfindlicher ist als der Rücken.
+Dadurch kitzelte es am Bauch schon, während das Vibrieren am Rücken kaum wahrnehmbar war. Dieses
+Problem löste ich, indem ich die Vibrationsstärke, über unterschiedliche Widerstände
+vor den Basen der Transistoren, änderte.
+
+Mein fertiger Gürtel ist auf Abb.~\vref{fig:My_compass_belt} zu sehen. Der Bau hat mich circa 31
+Stunden gekostet. Der Materialwert liegt ungefähr bei \EUR{80}.
+\href{http://www.cogsci.uni-osnabrueck.de/NBP/peterhome.html}%
+{Prof. Dr. Peter König} schrieb mir
+in einer eMail, dass neben vielen hundert Arbeitsstunden Entwicklung der Materialwert
+von ihrer Entwicklung noch vierstellig ist.
+Es gibt aber aktuell Bemühungen diesen Preis zu drücken.
+Mein Nachbau ist also um einiges einfacher als die Entwicklungen des \Linkfeelspace{} Projekts.
+
+Außerdem schrieb er, dass eines der größten Probleme der hohe Stromverbrauch war. Deshalb überprüfte
+ich meine eigene Schaltung diesbezüglich. Ich stellte fest, dass die Schaltung im Betrieb
+\SI{44}{\milli\ampere} bei \SI{5,35}{\volt} verbrauchte. Ein laufender Vibrationsmotor verbraucht
+hingegen schon \SI{80}{\milli\ampere}\footnote{Ein sehr kleiner Vibrationsmotor verbraucht sogar
+\SI{130}{\milli\ampere}. Dieser höhere Verbrauch ist notwendig, da man die Vibration wegen der
+kleineren Unwucht sonst nicht spürt.}.
+Es sieht also gar nicht \emph{so} schlecht aus. Nach meinen Berechnungen lässt sich der Gürtel
+gute 14 Stunden\footnote{Unter der Annahme, dass sich ein Motor ständig dreht und ein Akkupack mit
+\SI{2}{\ampere\hour} zum Einsatz kommt.} betreiben.
+Soviel zur Theorie. In der Praxis hatte ich ebenfalls Probleme mit der Stromversorgung, da die Schaltung
+unterhalb von \SI{4,9}{\volt} nicht mehr zuverlässig funktioniert.
+Dieses Problem löste ich mit einem Spannungswandler und einem Akkupack mit mehr Zellen.
+
+\begin{figurewrapper}
+	\includegraphics[width=0.7\hsize]{files/images/Robin/compass_belt/IMG_8009-rm-bg\imageresize}
+	\captionof{figure}{Nachbau des Kompass-Gürtels}
+	\label{fig:My_compass_belt}
+\end{figurewrapper}
+
+\subsubsection{Erfahrungen}
+Erste Tests bestätigten meine Vermutung, dass sich mit einem solchen Gürtel die Orientierung nach
+einer gewissen Zeit verbessern könnte. Hierfür sollten dann aber mindestens vier Vibrationsmotoren
+zur Verfügung stehen.
+\begin{comment}
+Allerdings ist bei der Stärke der Vibration noch Optimierungspotenzial.
+In meiner derzeitigen Umsetzung stören die Vibrationen nach längerem Tragen
+des Gürtels mehr als sie nützen.
+\end{comment}
+
+
+
+\subsection{Magnet im Finger}
+\begin{wrapfigure}{r}{0pt}
+	\href{\URLQuinnMagnet}{\includegraphics[width=5.6cm]%
+		{files/images/Robin/magnet/Quinn_Norton/Magnet_am_Finger-rm-bg}%
+	}
+	\captionof{figure}[Magnete werden vom Ringfinger von Quinn Norton angezogen]%
+	{Magnete werden vom Ringfinger von Quinn Norton angezogen\footnotemark}%
+	\label{fig:Quinn_Norton_magnet}
+\end{wrapfigure}
+\footnotetext{Hintergrund entfernt und zugeschnitten.
+Das Original ist hier zu finden: \url{\URLQuinnMagnet}}
+
+Die US-Journalistin \href{http://quinnnorton.com/}{Quinn Norton} begann 2005, sich für funktionale
+Körperveränderung zu interessieren.
+Im September ließ sie sich einen kleinen Magneten in die Spitze des rechten
+Ringfingers implantieren, da hier sehr viele Nerven vorhanden sind. Der Magnet bewegt sich angeregt
+durch elektromagnetische Felder in ihrem Finger. In der Nähe von elektrischen Leitungen nahm sie ein
+Vibrieren wahr. Bei Sicherheitsschranken in Geschäften hatte sie sogar Schmerzen, da diese offenbar
+mit hohen Leistungen arbeiten. Die Fingerspitze ist so empfindlich, dass sie sogar die Festplatten
+Aktivität genauer das Anlaufen einer Festplatte spüren konnte.
+
+Für diese Zeit hatte sie einen sechsten Sinn. Nach ein paar Monaten trat allerdings eine Infektion
+auf. Die Silikon-Schutzschicht ist offenbar beschädigt worden und der Magnet wurde von ihrem Körper
+angegriffen. Ihr Arzt versuchte den zerbröselnden Magneten herauszupullen, aber dies gelang ihm
+nicht. Nach diesem Zwischenfall hatte sie ihr Gespür für elektromagnetische Felder verloren. Aber
+Magnete konnte sie immer noch mit ihrem Ringfinger halten
+(siehe Abb.~\vref{fig:Quinn_Norton_magnet}). 2007 wurde der Magnet dann komplett entfernt. Sie ist
+einerseits glücklich, dass der Magnet entfernt wurde, aber andererseits vermisst sie den
+sechsten Sinn. Auch wenn ihre Experimente mit dem Magnet im Finger mit viel Schmerzen verbunden
+waren, sagte sie schon, dass wenn das Problem mit der Silikon-Schutzschicht gelöst ist, wird sie
+sich wieder einen Magneten implantieren lassen.\footcite{23C3:body_hacking,
+mindhacks:magnet_removed}
+
+\subsubsection{Magnet an meinem Finger}
+Um ihre Erkenntnisse nachzuvollziehen, überlegte ich mir, wie ich einen Magneten an meinem
+Ringfinger anbringen konnte, ohne diesen gleich implantieren zu lassen.
+
+Zuerst versuchte ich, verschiedene Magneten an meinem Ringfinger mit Klebeband zu befestigen. Dies
+brachte aber keine Ergebnisse, da hierdurch die Durchblutung verschlechtert wird und man deswegen
+weniger Gefühl im Finger hat. Außerdem spürt man den Puls zu stark.
+
+\begin{wrapfigure}{r}{0pt}
+	\includegraphics[width=6cm]%
+		{files/images/Robin/magnet/Magnet_auf_dem_Finger-rm-bg-cut\imageresize}
+	\captionof{figure}{Mein Ringfinger mit Magnet (befestigt mit Sekundenkleber)}
+	\label{fig:My_magnet}
+\end{wrapfigure}
+
+Es war also nötig mir einen Magnet auf den Fingernagel des rechten Ringfingers zu kleben. Ich
+benutze einen normalen Alleskleber, den ich zuerst auf den Fingernagel gab und dann einen
+quadratischen sehr starken Magneten mit einem Volumen von \SI{125}{\cubic\milli\metre}
+und einem Gewicht von \SI{0,9}{\gram} auf den
+Fingernagel setzte. Dann fixierte ich den Magnet mit Klebeband. Das Aushärten des Klebers fühlte
+sich etwas merkwürdig an. Das Erste, was mir auffiel, war das zusätzliche Gewicht. Ich ließ den
+Kleber eine Stunde aushärten allerdings war der Kleber danach immer noch nicht fest. Als ich eine
+Schere benutze, um das Klebeband durchzuschneiden, blieb der Magnet am Metall der Schere hängen und
+löste sich vom Fingernagel.
+
+Als Nächstes benutzte ich Sekundenkleber. Dies funktionierte deutlich besser
+(siehe Abb.~\vref{fig:My_magnet}).
+Direkt nach dem
+Aufsetzen des Magneten auf den, mit Kleber bedeckten Finger, haftete der Magnet am Fingernagel.
+Zusätzliches Klebeband war nicht nötig. Im Gegensatz zum Alleskleber spürte ich beim Aushärten vom
+Sekundenkleber nichts.\footnote{Auf den Tuben der Flüssigkleber steht \enquote{kann
+allergische Reaktionen auslösen} allerdings hatte ich damit keine Probleme. Es gibt
+auch Hautkleber. Dieser ist vermutlich besser geeignet.} Auch konnte ich wären dem Aushärten
+diesen Text schreiben. Nach circa 40 Minuten war der Kleber dann gut durchgehärtet.
+
+\subsubsection{Tests und Erfahrungen}
+Als Erstes ging ich mit diesem \enquote{neuen Sinn} an das Steckdosenkabel meines
+Computers.\footnote{Der Computer hat mit TFT-Monitor circa einen Verbrauch von \SI{150}{\watt}.} Ab
+\SI{3}{\milli\metre} Distanz zwischen Magnet und Kabel spürte ich ein leichtes Zittern am
+Fingernagel. Bei ausgeschalteten Verbrauchern war hingegen kein Zittern wahrnehmbar. Bei
+Trafonetzteilen lässt sich sogar ohne das daran eine Last angeschlossen ist ein deutliches Zittern
+aus mehr als \SI{1}{\centi\metre} fühlen. Bei Schaltnetzteilen spürt man ohne Last gar nichts. Erst
+mit Verbraucher hat man die Möglichkeit wieder das Zittern zu spüren. Dies liegt natürlich an dem
+unterschiedlichen technischen Aufbau. Bei dem Zittern handelt es sich um die \SI{50}{\hertz}
+Netzfrequenz. Der fließende Strom baut um die Leitungen ein Magnetfeld auf.
+
+Mit einem Magneten am Finger lassen sich also magnetische Felder wahrnehmen. Man kann somit natürlich
+auch magnetische Objekte ertasten.
+
+Bei Festplatten habe ich allerdings nicht viel gesprüht. Das bleibt wohl denen vorbehalten, die
+einen Magnet unter der Haut haben.
+
+An das zusätzliche Gewicht des Magnets gewöhnt man sich recht schnell. Der Magnet fällt mir nur noch
+durch die Trägheitskraft auf.
+
+Die geklebte Verbindung zwischen Fingernagel und Manget ist wirklich sehr gut. Der Magnet hält
+Metalle und starke Magnete bis zu einem Gewicht von \SI{600}{\gram}. Mehr hält der Magnet nicht. Der
+Kleber hält hingegen mindestens \SI{1}{\kilo\gram}.
+Man kann kräftig an dem Magnet ziehen und er rührt sich nicht.
+Mehr habe ich nicht getestet, da ab diesem
+Gewicht Schmerzen auftreten.
+
+Nach zwei Tagen mit dem Magnet auf meinem Finger begann ich zu überlegen, wie ich den Magnet wieder
+entfernen konnte. Ich versuchte es mit einem Seitenschneider. Dies funktionierte auch nach ein paar
+Minuten. Ich ging zwischen Fingernagel und Magnet und löste so den Magnet. Die Klebereste ließen
+sich größtenteils mit einem Teppichmesser und mit einem Fingernagelknipser entfernen.
+Kleinere Klebereste lassen sich dann mit einer Feile oder einer
+Nass-Schleifmaschine\footnote{Nass-Schleifmaschine wegen der geringen Drehzahl. Eine normale
+Schleifmaschine ist nicht empfehlenswert.} abbekommen.
+
+Mit diesem Experiment konnte ich zumindest etwas nachvollziehen, was Quinn Norton mit einem Magnet
+in der Ringfingerspitze berichtete. Obwohl der Fingernagel um einiges unempfindlicher sein dürfe als
+das Innere der Fingerspitze.

@@ -1,0 +1,27 @@
+\hypersetup{pdfcreator={Robin Schneider}}
+\newcommand{\imageresize}{-resize}
+\ifDraft{
+%	\ofoot{Version: \printversion}\ifoot{\thepage}	% ~(\Numstring{page})
+	\usepackage[draft,nomargin,inline]{fixme}
+	\fxusetheme{colorsig}\renewcommand{\germanlistfixmename}{Verzeichnis der Anmerkungen}
+	}{
+	\usepackage{fixme} %\newcommand{\imageresize}{}
+%	\cfoot{\thepage}\ifoot{}\ofoot{}
+	\renewcommand{\imageresize}{}
+}
+%\let\chapter\part
+%\renewcommand{\part}[1]{\chapter{#1}}
+
+\usepackage{epigraph}
+\setlength{\epigraphwidth}{\hsize-5em}
+\newcommand{\printEpigraphPage}{%\thispagestyle{empty}%
+	\vspace*{\fill}%
+	\epigraph{Die Entdeckung der Evolution schließt die Einsicht ein, dass unsere Gegenwart mit
+		absoluter Sicherheit nicht das Ende (oder gar das Ziel) der Entwicklung sein kann.}%
+		{Hoimar von Ditfurth}%
+	\vfill\newpage%
+}
+%% http://de.wikiquote.org/wiki/Evolution
+
+\renewcommand{\signaturefile}{/home/rsadmin/Dokumente/LaTeX/input-document/Signatur-Robin}
+\renewcommand{\licenseadd}{, mit Ausnahme mancher Bilder,\xspace}
