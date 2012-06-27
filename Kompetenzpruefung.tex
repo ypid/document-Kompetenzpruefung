@@ -14,6 +14,7 @@
 	timeRS,
 	graphicRS,
 	eso-pic,	%% for the image on the titlepage
+	subfigure,	%% for Hannah
 	wrapfigWorkaroundRS,
 %	mathematicsRS,
 %	gamesRS,
@@ -63,18 +64,18 @@
 
 \input{files/chapters/Hannah/main}
 
-\input{files/chapters/Robin/main}
+%\input{files/chapters/Robin/main}
 
-\input{files/chapters/Joshuah/main}
+%\input{files/chapters/Joshuah/main}
 
 
-\input{files/chapters/reflexion}
+%\input{files/chapters/reflexion}
 
 
 \setcounter{sectionsV}{\value{section}}		%% Speichert die sectionnummer vor \appendix zwischen
 \appendix	%% Sorgt für Buchstaben im Inhaltsverzeichnis
 
-\nocite{*}
+%\nocite{*}
 
 \vfill
 \section*{Urheberrechte und Lizenzhinweise}
@@ -99,7 +100,7 @@ und stammt von Look Bellow.
 	\Isourcefile{Metainformationen}{files/header/metainfos.tex}
 	\Isourcefile{\hyperref[titlepage]{\Titlepagename}}{files/titlepage/titlepage.tex}
 	\sourcefile{\nameref{sec:preface}}{files/chapters/preface.tex}
-	\sourcefile{Teil Hannah}{files/chapters/Hannah/main.tex}
+	\sourcefile{\hyperref[sec:Hannah_Haid]{Teil Hannah}}{files/chapters/Hannah/main.tex}
 	\sourcefile{\hyperref[sec:Robin_Schneider]{Teil Robin}}{files/chapters/Robin/main.tex}
 	\sourcefile{Robin: \nameref{sec:Robin:historical_overview}}{files/chapters/Robin/history.tex}
 	\sourcefile{Robin: \nameref{sec:Robin:topical}}{files/chapters/Robin/topical.tex}
