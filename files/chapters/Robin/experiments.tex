@@ -7,7 +7,7 @@ des Menschen und der Anpassungsfähigkeit des Gehirns durchgeführt habe.
 \newcommand{\Linkfeelspace}%
 {\enquote{\href{http://feelspace.cogsci.uni-osnabrueck.de/}{Feel Space}}}
 \subsection{Haptischer Kompass-Gürtel}
-Die Universität Osnabrück entwickelte unter dem Projektname \Linkfeelspace
+Die Universität Osnabrück entwickelte unter dem Projektname \Linkfeelspace{}
 einen Gürtel, der über Vibration dem Träger die Himmelsrichtung mitteilt.
 Dazu werden zwölf beziehungsweise 30 Vibrationsmotoren mit einem Gürtel um den Bauch angebracht.
 Der Träger weiß dadurch, wo Norden ist,
@@ -32,12 +32,6 @@ dass ich die meisten Komponenten und auch das nötige Wissen bereits besaß. Ein
 schon von ein paar technikinteressierten Menschen umgesetzt, allerdings fand ich keine Anleitung.
 Deshalb überlegte ich mir selbst eine Schaltung.
 
-\begin{wrapfigure}{r}{0pt}
-	\includegraphics[width=5cm]{files/images/Robin/compass_belt/IMG_7994-rm-bg\imageresize}
-	\captionof{figure}{Komponenten meines Kompass-Gürtels}
-	\label{fig:Technik_compass_belt}
-\end{wrapfigure}
-
 Begonnen habe ich mit einem
 \href{http://www.mikrokopter.de/ucwiki/MK3Mag}{elektronischen Kompass}%
 \footnote{Nummer 1 auf Abb.~\vref{fig:Technik_compass_belt}}
@@ -50,7 +44,13 @@ weiter zu verarbeiten. Den Mikrokontroller lötete ich auf eine
 Lochstreifenplatine. Eine direkte Verarbeitung der Gradangabe und die Ansteuerung der Motoren mit
 dem Mikrokontroller des Kompassmoduls schloss ich aus, um mehr Steuerausgänge zur Verfügung zu
 haben\footnote{und um nicht auf der Platine löten zu müssen. Zum Beispiel das direkte abgreifen
-von Signale am SMD-Mikrokontroller.}.
+von Signalen am SMD-Mikrokontroller.}.
+
+\begin{wrapfigure}{r}{0pt}
+	\includegraphics[width=5cm]{files/images/Robin/compass_belt/IMG_7994-rm-bg\imageresize}
+	\captionof{figure}{Komponenten meines Kompass-Gürtels}
+	\label{fig:Technik_compass_belt}
+\end{wrapfigure}
 Den externen Mikrokontroller programmierte ich so, dass dieser einen von vier Steuerausgängen
 für 150 Millisekunden anschaltet, wenn Norden entweder vorne, rechts, hinten oder links ist.
 Um dieses schwache\footnote{Die maximale Belastbarkeit ist mit \SI{40}{\milli\ampere} pro Pin
@@ -70,18 +70,20 @@ sitzt meist ganz unten im Handy in der Nähe des Mikrofons, außer bei einem Mot
 diesem war er im unteren Teil des Display Gehäuses verbaut.}, wo der Motor verbaut war, aus dem Gehäuse
 raus und hatte so schon passende Halterungen, die genug Platz für die Unwucht boten. Die Vibrationsmotoren
 klebte ich mit Heißkleber in die Halterungen. Als ich dann noch zwei alte Handys %von einem guten Freund
-bekam, entschied ich mich dafür doch keine Vibrationsmotoren zu bestellen, sondern noch zwei auseinander zu
-nehmen. Außerdem beschloss ich nicht mehr das Handygehäuse zu zerschneiden, um eine passende Hülle für die
-Motoren zu bekommen, sondern selbst zwei aus Holz zu fertigen. Ich bohrte Löcher mit dem Durchmesser der
-Motoren in kleine Hartholzstücke und brachte diese dann in die Form von Quadern. Anschließend klebte ich
-die Vibrationsmotoren im Holz fest. Dabei war darauf zu achten, dass sich die Unwucht weiterhin drehen
-konnte.
+bekam, entschied ich mich dafür doch keine Vibrationsmotoren zu bestellen.
 
 \begin{wrapfigure}{r}{0pt}
 	\includegraphics[width=5.1cm]{files/images/Robin/compass_belt/IMG_8070-rm-bg\imageresize}
-	\captionof{figure}{Zwei Vibrationsmotoren mit Gehäuse aus Holz}
+	\captionof{figure}{Vibrationsmotoren mit Holzgehäuse}
 	\label{fig:motors_compass_belt}
 \end{wrapfigure}
+Außerdem beschloss ich,
+nicht mehr das Handygehäuse zu zerschneiden, um eine passende Hülle für die
+Motoren zu bekommen, sondern selbst zwei aus Holz zu fertigen. Ich bohrte Löcher mit dem Durchmesser
+der
+Motoren in kleine Hartholzstücke und brachte diese dann in die Form von Quadern. Anschließend klebte ich
+die Vibrationsmotoren im Holz fest. Dabei war darauf zu achten, dass sich die Unwucht weiterhin drehen
+konnte.
 
 Somit standen mir vier Vibrationsmotoren zur Verfügung.
 Die komplette Technik brachte ich zusammen mit einem Akkupack
@@ -96,7 +98,7 @@ Dadurch kitzelte es am Bauch schon, während das Vibrieren am Rücken kaum wahrn
 Problem löste ich, indem ich die Vibrationsstärke, über unterschiedliche Widerstände
 vor den Basen der Transistoren, änderte.
 
-Mein fertiger Gürtel ist auf Abb.~\vref{fig:My_compass_belt} zu sehen. Der Bau hat mich circa 31
+Mein Kompass-Gürtel ist auf Abb.~\vref{fig:My_compass_belt} zu sehen. Der Bau hat mich circa 31
 Stunden gekostet. Der Materialwert liegt ungefähr bei \EUR{80}.
 \href{http://www.cogsci.uni-osnabrueck.de/NBP/peterhome.html}%
 {Prof. Dr. Peter König} schrieb mir
@@ -135,15 +137,15 @@ Gebäuden interessant, wie auch draußen.\footnote{Langzeiterfahrungen kann ich 
 präsentieren, da der Gürtel erst zwei Wochen vor Abgabe der Dokumentation fertig wurde.}
 
 Nebenbei machte ich die Erfahrung, dass die Personen, die mich auf den Gürtel ansprachen, zuerst an
-Bombengürtel dachten.
+einen Bombengürtel dachten~\dots
 
 \subsection{Magnet im Finger}
 \begin{wrapfigure}{r}{0pt} %% Einbindung steht im Konflikt mit dem Urheberrecht
 	\href{\URLQuinnMagnet}{\includegraphics[width=5.6cm]%
 		{files/images/Robin/magnet/Quinn_Norton/Magnet_am_Finger-rm-bg}%
 	}
-	\captionof{figure}[Magnete werden vom Ringfinger von Quinn Norton angezogen]%
-	{Magnete werden vom Ringfinger von Quinn Norton angezogen\footnotemark}%
+	\captionof{figure}[Magnete hängen am Ringfinger von Quinn Norton]%
+	{Magnete hängen am Ringfinger von Quinn Norton\footnotemark}%
 	\label{fig:Quinn_Norton_magnet}
 \end{wrapfigure}
 \footnotetext{Hintergrund entfernt und zugeschnitten.
@@ -198,7 +200,7 @@ löste sich vom Fingernagel.
 Als Nächstes benutzte ich Sekundenkleber. Dies funktionierte deutlich besser
 (siehe Abb.~\vref{fig:My_magnet}).
 Direkt nach dem
-Aufsetzen des Magneten auf den, mit Kleber bedeckten Finger, haftete der Magnet am Fingernagel.
+Aufsetzen des Magneten auf den, mit Kleber bedeckten, Finger haftete der Magnet am Fingernagel.
 Zusätzliches Klebeband war nicht nötig. Im Gegensatz zum Alleskleber spürte ich beim Aushärten vom
 Sekundenkleber nichts.\footnote{Auf den Tuben der Flüssigkleber steht \enquote{kann
 allergische Reaktionen auslösen} allerdings hatte ich damit keine Probleme. Es gibt
