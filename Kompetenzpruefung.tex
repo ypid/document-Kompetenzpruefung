@@ -44,7 +44,7 @@
 	schoolPDFinfoRS,
 	tableRS,
 }
-\SetDraft{on}
+%\SetDraft{on}
 \input{files/header/hacks}
 %%%Body
 \begin{document}
@@ -86,9 +86,11 @@ und stammt von Look Bellow.
 \printURLlong
 \printlicense
 \printendsignature
-%\ifDraft{
+
+\ifDraft{
 	\newpage
 	\include{files/chapters/Planung-Recherche}
+}{}
   \Statistiken
   Status:~\progressbar{.92} (eigenes Ermessen) \\
   \href{http://robin.de.marissa.hostorama.ch/tmp/Realschulabschluss-Countdown.html}%
