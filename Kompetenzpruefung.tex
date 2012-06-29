@@ -46,6 +46,7 @@
 }
 %\SetDraft{on}
 \input{files/header/hacks}
+%\renewcommand{\imageresize}{-resize}
 %%%Body
 \begin{document}
 \pdfbookmark[1]{\Titlepagename}{titlepage}\pagenumbering{Roman}\thispagestyle{empty}
@@ -92,7 +93,7 @@ und stammt von Look Bellow.
 	\include{files/chapters/Planung-Recherche}
 }{}
   \Statistiken
-  Status:~\progressbar{.92} (eigenes Ermessen) \\
+  Status:~\progressbar{.93} (eigenes Ermessen) \\
   \href{http://robin.de.marissa.hostorama.ch/tmp/Realschulabschluss-Countdown.html}%
 	{Countdown zur Kompetenzprüfung und den Realschulprüfungen (Webseite)}
   \newpage
@@ -103,6 +104,7 @@ und stammt von Look Bellow.
 	\Isourcefile{\hyperref[titlepage]{\Titlepagename}}{files/titlepage/titlepage.tex}
 	\sourcefile{\nameref{sec:preface}}{files/chapters/preface.tex}
 	\sourcefile{\hyperref[sec:Hannah_Haid]{Teil Hannah}}{files/chapters/Hannah/main.tex}
+	\Isourcefile{Literaturdatenbank Hannah}{files/header/Hannah.bib}
 	\sourcefile{\hyperref[sec:Robin_Schneider]{Teil Robin}}{files/chapters/Robin/main.tex}
 	\sourcefile{Robin: \nameref{sec:Robin:historical_overview}}{files/chapters/Robin/history.tex}
 	\sourcefile{Robin: \nameref{sec:Robin:topical}}{files/chapters/Robin/topical.tex}
@@ -112,7 +114,8 @@ und stammt von Look Bellow.
 	\Isourcefile{Literaturdatenbank Robin}{files/header/Robin.bib}
 	\sourcefile{Teil Joshuah}{files/chapters/Joshuah/main.tex}
 	\Isourcefile{Literaturdatenbank Joshuah}{files/header/Joshuah.bib}
-	\Isourcefile{\nameref{sec:Planung-Recherche}}{files/chapters/Planung-Recherche.tex}
+	\sourcefile{\nameref{sec:reflexion}}{files/chapters/reflexion.tex}
+%	\Isourcefile{\nameref{sec:Planung-Recherche}}{files/chapters/Planung-Recherche.tex}
   \end{sourcefiletable}
 %}{}
 %\ifDraft{
