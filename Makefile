@@ -1,4 +1,4 @@
-include $(HOME)/Skripten/makefiles/latex/Makefile.rules
+include $(HOME)/Skripte/makefiles/latex/Makefile.rules
 
 TEXORGFILE	= Kompetenzpruefung
 TEXFILE		= $(TEXORGFILE)
@@ -13,12 +13,12 @@ UPLOADDIR	= Klasse/12
 UPLOAD		?= $(UPLOADCOM) /httpdocs/$(UPLOADDIR) /tmp/$(UPLOADFILE)
 ## Geht nur bei einer Datei
 
-include $(HOME)/Skripten/makefiles/latex/Makefile.if
+include $(HOME)/Skripte/makefiles/latex/Makefile.if
 
 main: $(TEXFILE).pdf log
 
 all: gitstats main upload
 #	make FILE="$(TEXBTFILE)"
 
-include $(HOME)/Skripten/makefiles/latex/Makefile.targets
+include $(HOME)/Skripte/makefiles/latex/Makefile.targets
 
