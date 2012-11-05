@@ -120,12 +120,11 @@ und stammt von Look Bellow.
 %\ifDraft{
   \begin{landscape}
 	\pagestyle{empty}
-	\renewcommand{\resetplusplus}{\setcounter{plusplus}{36}}
-	\printVersionNotes\renewcommand{\resetplusplus}{\setcounter{plusplus}{0}}
+	\printVersionNotes
 	\input{files/git/old/versions-log}
-	\printgitstatlandscape{1}
+%	\printgitstatlandscape{1}
   \end{landscape}
-	\printgitstat{1}
+%	\printgitstat{1}
 %	\subsubsection*{Dateien?}
 %	\pdfbookmark[3]{Dateien?}{files_by_date}
 %	\includegraphics[width=14cm]{files/git/stats/files_by_date-crop}
