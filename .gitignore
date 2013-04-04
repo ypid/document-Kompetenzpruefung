@@ -1,11 +1,6 @@
 von*
-test.*
-*.odt
-*.doc*
+test*
+*.odt*
 files/images
-*.png
 files/git
 Bewertung*
-files/chapters/tmp
-.git-corrupted
-files/chapters/reflexion-diff.tex

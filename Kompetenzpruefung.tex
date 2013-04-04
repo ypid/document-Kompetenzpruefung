@@ -1,7 +1,7 @@
-%% <Schule/Epochenheft.tex> Vorlageversion 1.1.1 <Robin Schneider>
-%%%Präambel
+%% <school/Epochenheft.tex> template 1.1.1 by Robin `ypid` Schneider <ypid23@aol.de>
+%%% preamble
 %\RequirePackage{snapshot}		%% \jobname.dep
-%\listfiles	%% listfiles in die Logdatei
+%\listfiles %% listfiles to logfile
 \RequirePackage{RequirePackageRS}
 \documentclass[12pt,a4paper,ngerman,numbers=noenddot,toc=listof]{scrreprt}
 %\usepackage[nohyperlinks,nolist]{acronym}		% nolist,withpage,footnote %% Abkürzungsverzeichnis
@@ -25,7 +25,7 @@
 	schoolRS,
 %	chemistryRS,
 }
-%% Spetzifische angaben
+%% specific indications
 \input{files/header/metainfos}
 \usepackage[
 %	style=numeric,
@@ -48,7 +48,7 @@
 %\SetDraft{on}
 \input{files/header/hacks}
 \renewcommand{\imageresize}{-resize}
-%%%Body
+%%% body
 \begin{document}
 \pdfbookmark[1]{\Titlepagename}{titlepage}\pagenumbering{Roman}\thispagestyle{empty}
 \input{files/titlepage/titlepage}
