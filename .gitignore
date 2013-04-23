@@ -1,6 +1,11 @@
 von*
 test*
 *.odt*
+*.doc
 files/images
 files/git
 Bewertung*
+*-autopp.ctr
+files/chapters/Hannah/rm/
+files/chapters/Joshuah/new/
+files/titlepage/*.png
